@@ -1,7 +1,7 @@
 #!/usr/bin/env dmd
 import std;
 
-alias print = writeln;
+alias print = writeln; 
 
 void main(string[] args) {
 
