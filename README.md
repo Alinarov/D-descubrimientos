@@ -38,4 +38,4 @@ La capacidad de D para escribir código reutilizable y flexible lo hace ideal pa
 
 D Lang es un lenguaje de programación potente y versátil que combina lo mejor de C y C++ con características modernas y avanzadas. Su rendimiento, eficiencia y facilidad de uso lo convierten en una excelente opción para una amplia gama de aplicaciones, desde el desarrollo de sistemas de bajo nivel hasta aplicaciones científicas y videojuegos. Si estás buscando un lenguaje que te ofrezca control total sobre el hardware sin sacrificar la productividad, D Lang es definitivamente una opción a considerar.
 
-![Future of Software](https://www.example.com/future-software-image.png)
+![Future of Software](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fgodot-dlang%2Fgodot-dlang&psig=AOvVaw1ssgYsnzOWQ_08dvi4gUGL&ust=1721077575245000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKj1md63p4cDFQAAAAAdAAAAABAE)
