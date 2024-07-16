@@ -8,7 +8,7 @@ La regresión lineal es una técnica estadística que intenta modelar la relaci�
 
 La línea de regresión se describe por la ecuación:
 
-```plaintext
+
 y = β₀ + β₁x
 y: Variable dependiente (objetivo o respuesta)
 x: Variable independiente (característica o predictor)
