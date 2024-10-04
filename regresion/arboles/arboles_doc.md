@@ -1,4 +1,4 @@
-```markdown
+
 # Implementación de un Árbol Binario de Búsqueda en D
 
 ## Introducción
