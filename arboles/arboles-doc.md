@@ -123,9 +123,6 @@ void main(string[] args) {
 ## Conclusión
 Este código implementa un árbol binario de búsqueda en D, permitiendo insertar y recorrer números en orden ascendente. Los árboles de decisión, aunque conceptualmente diferentes, comparten la idea de usar estructuras jerárquicas para organizar información y tomar decisiones basadas en condiciones.
 
-
-### Explicación:
-Este documento en Markdown explica la estructura del código, qué hace cada parte y relaciona la idea de árboles de decisión con la implementación de un árbol binario de búsqueda. Puedes utilizar este formato para documentar tu código y facilitar su comprensión.
 ```
 
 
