@@ -4,6 +4,34 @@
 ## Introducción
 Un **árbol de decisión** es una estructura de datos utilizada en aprendizaje automático y estadísticas para tomar decisiones basadas en condiciones. Sin embargo, el código que se presenta a continuación implementa un **árbol binario de búsqueda**, que es una estructura que organiza datos en nodos de manera que facilita la búsqueda, inserción y eliminación.
 
+## ¿Qué son?
+Un **árbol de decisión** es un modelo utilizado en **machine learning** y **estadística** para tomar decisiones y predecir resultados. Es un gráfico en forma de árbol donde:
+
+- **Nodos**: Representan características o atributos sobre los cuales se hace una decisión.
+- **Ramas**: Representan las decisiones tomadas basadas en los valores de los atributos.
+- **Hojas**: Representan el resultado o la clasificación final.
+
+Los árboles de decisión son populares por su simplicidad y capacidad de interpretar fácilmente los datos.
+
+## ¿Cómo funcionan?
+
+1. **Raíz**: Comienza con un conjunto de datos que contiene varias características.
+2. **División**: El algoritmo selecciona el atributo más importante (según criterios como el **índice de Gini** o la **entropía**) y divide el conjunto de datos en subconjuntos.
+3. **Recursión**: Se repite el proceso para cada subconjunto, creando nuevas ramas y nodos, hasta que los subconjuntos sean puros (solo un tipo de resultado) o se alcance un criterio de parada.
+4. **Clasificación**: Cuando los datos alcanzan las hojas, el árbol asigna una clase o predicción.
+
+## Ventajas
+- **Interpretabilidad**: Fácil de visualizar y entender.
+- **Versatilidad**: Puede utilizarse tanto para problemas de clasificación como de regresión.
+- **No requiere normalización de datos**: Funciona con datos crudos sin la necesidad de escalarlos.
+
+## Desventajas
+- **Sobreajuste**: Los árboles pueden volverse demasiado complejos y ajustarse demasiado a los datos de entrenamiento.
+- **Inestabilidad**: Pequeños cambios en los datos pueden generar un árbol completamente diferente.
+
+## Ejemplo Visual
+
+
 ## Estructura del Código
 
 ### Importaciones
