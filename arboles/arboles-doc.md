@@ -1,4 +1,3 @@
-
 # Implementación de un Árbol Binario de Búsqueda en D
 
 ## Introducción
@@ -12,6 +11,9 @@ Un **árbol de decisión** es un modelo utilizado en **machine learning** y **es
 - **Hojas**: Representan el resultado o la clasificación final.
 
 Los árboles de decisión son populares por su simplicidad y capacidad de interpretar fácilmente los datos.
+
+![arbol de decicion](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/df/de/Decision-Tree.component.complex-narrative-xl.ts=1693403600692.png)
+
 
 ## ¿Cómo funcionan?
 
