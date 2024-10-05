@@ -31,10 +31,7 @@ Los árboles de decisión son populares por su simplicidad y capacidad de interp
 - **Sobreajuste**: Los árboles pueden volverse demasiado complejos y ajustarse demasiado a los datos de entrenamiento.
 - **Inestabilidad**: Pequeños cambios en los datos pueden generar un árbol completamente diferente.
 
-## Ejemplo Visual
-
-
-## Estructura del Código
+## Ejemplo Visual, estructura del Código
 
 ### Importaciones
 ```d
