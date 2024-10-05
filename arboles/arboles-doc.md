@@ -79,6 +79,23 @@ class Arbol {
 ```
 - La clase `Arbol` representa el árbol binario de búsqueda, con un puntero a la raíz. Contiene métodos para insertar valores y recorrer el árbol.
 
+
+### Función Principal
+```d
+void main(string[] args) {
+    int[] nueva_lista = [60, 188, ...]; // Lista de números
+    auto arbol = new Arbol();
+    foreach (numero; nueva_lista) {
+        arbol.insertar(numero);
+    }
+
+    print("Recorrido en orden del árbol binario:");
+    arbol.imprimirInorden();
+}
+```
+- En `main`, se crea una lista de números desordenados, se inserta cada número en el árbol y se imprime el recorrido en orden.
+
+
 #### Método para Insertar
 ```d
 void _insertar(int valor, Nodo nodoActual) {
@@ -104,21 +121,6 @@ void recorrerInorden(Nodo nodoActual) {
 }
 ```
 - El método `recorrerInorden` imprime los valores del árbol en orden ascendente.
-
-### Función Principal
-```d
-void main(string[] args) {
-    int[] nueva_lista = [60, 188, ...]; // Lista de números
-    auto arbol = new Arbol();
-    foreach (numero; nueva_lista) {
-        arbol.insertar(numero);
-    }
-
-    print("Recorrido en orden del árbol binario:");
-    arbol.imprimirInorden();
-}
-```
-- En `main`, se crea una lista de números desordenados, se inserta cada número en el árbol y se imprime el recorrido en orden.
 
 ## Conclusión
 Este código implementa un árbol binario de búsqueda en D, permitiendo insertar y recorrer números en orden ascendente. Los árboles de decisión, aunque conceptualmente diferentes, comparten la idea de usar estructuras jerárquicas para organizar información y tomar decisiones basadas en condiciones.
