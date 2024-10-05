@@ -12,7 +12,7 @@ Un **árbol de decisión** es un modelo utilizado en **machine learning** y **es
 
 Los árboles de decisión son populares por su simplicidad y capacidad de interpretar fácilmente los datos.
 
-![arbol de decicion](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/df/de/Decision-Tree.component.complex-narrative-xl.ts=1693403600692.png)
+![arbol de decicion](https://corporate-assets.lucid.co/spark/a1b20394-1185-4f0a-8cd5-ded407dc0373.png?v=1702000176117)
 
 
 ## ¿Cómo funcionan?
