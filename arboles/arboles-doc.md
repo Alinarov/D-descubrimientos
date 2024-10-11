@@ -30,97 +30,94 @@ Los árboles de decisión son populares por su simplicidad y capacidad de interp
 ## Desventajas
 - **Sobreajuste**: Los árboles pueden volverse demasiado complejos y ajustarse demasiado a los datos de entrenamiento.
 - **Inestabilidad**: Pequeños cambios en los datos pueden generar un árbol completamente diferente.
+## Estructura del Código
 
-## Ejemplo Visual, estructura del Código
-
-### Importaciones
+### Importaciones y Clase Nodo
 ```d
 import std.stdio;
-import std.array;
-import std.conv;
-import std.string;
-```
-- Se importan las bibliotecas necesarias para operaciones de entrada/salida, manejo de arreglos y conversiones de tipo.
 
-### Clase Nodo
-```d
+/**
+ * Nodo
+ */
+// Clase que representa un nodo en un árbol binario
 class Nodo {
-    int valor;
-    Nodo izquierdo;
-    Nodo derecho;
+    int valor;          // Valor almacenado en el nodo
+    Nodo nodo_iz;      // Referencia al nodo hijo izquierdo
+    Nodo nodo_de;      // Referencia al nodo hijo derecho
 
-    this(int valor) {
+    this(int valor) {  // Constructor que inicializa el nodo con un valor
         this.valor = valor;
-        this.izquierdo = null;
-        this.derecho = null;
+        this.nodo_iz = null;
+        this.nodo_de = null;
     }
 }
-```
-- La clase `Nodo` representa un nodo en el árbol, que contiene un valor y punteros a los nodos izquierdo y derecho.
-
-### Clase Árbol
-```d
-class Arbol {
-    Nodo raiz;
-
-    this() {
-        this.raiz = null;
-    }
-
-    void insertar(int valor) {
-        if (raiz is null) {
-            raiz = new Nodo(valor);
-        } else {
-            _insertar(valor, raiz);
-        }
-    }
-    // ...
-}
-```
-- La clase `Arbol` representa el árbol binario de búsqueda, con un puntero a la raíz. Contiene métodos para insertar valores y recorrer el árbol.
-
-
-### Función Principal
-```d
+Se importa la biblioteca std.stdio para realizar operaciones de entrada/salida.
+La clase Nodo representa un nodo del árbol, que contiene un valor y punteros a sus hijos izquierdo y derecho.
+Función Principal
+d
+Copiar código
 void main(string[] args) {
-    int[] nueva_lista = [60, 188, ...]; // Lista de números
-    auto arbol = new Arbol();
-    foreach (numero; nueva_lista) {
-        arbol.insertar(numero);
-    }
-
-    print("Recorrido en orden del árbol binario:");
-    arbol.imprimirInorden();
+    Nodo root = new Nodo(6);  // Creamos la raíz del árbol con un valor de 6
+    // Creamos nodos adicionales y establecemos las relaciones...
 }
-```
-- En `main`, se crea una lista de números desordenados, se inserta cada número en el árbol y se imprime el recorrido en orden.
-
-
-#### Método para Insertar
-```d
-void _insertar(int valor, Nodo nodoActual) {
-    if (valor < nodoActual.valor) {
-        // Lógica para insertar en el subárbol izquierdo
-    } else if (valor > nodoActual.valor) {
-        // Lógica para insertar en el subárbol derecho
+Se crea un nodo raíz y se inicializan otros nodos para construir el árbol.
+Recorridos del Árbol
+Recorrido en Orden (In-Order)
+d
+Copiar código
+void indorder(Nodo nodo) {
+    if (nodo is null) return;  // Caso base
+    indorder(nodo.nodo_iz);    // Llamada recursiva para el nodo izquierdo
+    print(nodo.valor, " ");     // Imprimimos el valor del nodo actual
+    indorder(nodo.nodo_de);    // Llamada recursiva para el nodo derecho
+}
+Este método imprime los valores de los nodos en orden ascendente.
+Recorrido en Preorden (Pre-Order)
+d
+Copiar código
+void preorder(Nodo nodo) {
+    if (nodo is null) return;  // Caso base
+    print(nodo.valor, " ");     // Imprimimos el valor del nodo actual
+    preorder(nodo.nodo_iz);     // Llamada recursiva para el nodo izquierdo
+    preorder(nodo.nodo_de);     // Llamada recursiva para el nodo derecho
+}
+Imprime el valor del nodo actual antes de recorrer los hijos.
+Recorrido en Postorden (Post-Order)
+d
+Copiar código
+void postorder(Nodo nodo) {
+    if (nodo is null) return;  // Caso base
+    postorder(nodo.nodo_iz);   // Llamada recursiva para el nodo izquierdo
+    postorder(nodo.nodo_de);    // Llamada recursiva para el nodo derecho
+    print(nodo.valor, " ");      // Imprimimos el valor del nodo actual
+}
+Imprime el valor del nodo después de recorrer ambos hijos.
+Inserción de Nodos
+d
+Copiar código
+void insert(Nodo nodo, int valor) {
+    if (nodo is null) return;  // Caso base
+    if (valor >= nodo.valor) {
+        // Lógica para insertar en el subárbol derecho...
     } else {
-        writeln("El valor ", valor, " ya existe en el árbol.");
+        // Lógica para insertar en el subárbol izquierdo...
     }
 }
-```
-- Este método ayuda a insertar valores en el árbol siguiendo la regla de que los valores menores van a la izquierda y los mayores a la derecha.
-
-### Recorrido en Orden
-```d
-void recorrerInorden(Nodo nodoActual) {
-    if (nodoActual !is null) {
-        recorrerInorden(nodoActual.izquierdo);
-        print(nodoActual.valor);
-        recorrerInorden(nodoActual.derecho);
+Este método inserta un nuevo nodo en el árbol siguiendo las reglas de un árbol binario de búsqueda.
+Búsqueda de Nodos
+d
+Copiar código
+void encontrarEImprimir(Nodo nodo, int valor) {
+    if (nodo is null) {
+        writeln("Nodo no encontrado.");  // Mensaje si el nodo no existe
+        return;  // Salimos de la función
     }
+    // Comparación y búsqueda recursiva...
 }
+Busca un nodo por su valor e imprime información relevante.
+Conclusión
+Este código proporciona una implementación básica de un árbol binario en D, permitiendo insertar nodos y realizar recorridos en diferentes órdenes. Los árboles binarios son una estructura fundamental en la informática y tienen aplicaciones en diversas áreas como la búsqueda de datos y la representación de jerarquías.
 ```
-- El método `recorrerInorden` imprime los valores del árbol en orden ascendente.
 
 ## Conclusión
 Este código implementa un árbol binario de búsqueda en D, permitiendo insertar y recorrer números en orden ascendente. Los árboles de decisión, aunque conceptualmente diferentes, comparten la idea de usar estructuras jerárquicas para organizar información y tomar decisiones basadas en condiciones.
