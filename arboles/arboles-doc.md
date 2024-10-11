@@ -51,19 +51,23 @@ class Nodo {
         this.nodo_de = null;
     }
 }
+````
 Se importa la biblioteca std.stdio para realizar operaciones de entrada/salida.
 La clase Nodo representa un nodo del árbol, que contiene un valor y punteros a sus hijos izquierdo y derecho.
 Función Principal
-d
+````d
 Copiar código
 void main(string[] args) {
     Nodo root = new Nodo(6);  // Creamos la raíz del árbol con un valor de 6
     // Creamos nodos adicionales y establecemos las relaciones...
 }
+````
+
+
 Se crea un nodo raíz y se inicializan otros nodos para construir el árbol.
 Recorridos del Árbol
 Recorrido en Orden (In-Order)
-d
+````d
 Copiar código
 void indorder(Nodo nodo) {
     if (nodo is null) return;  // Caso base
@@ -71,9 +75,10 @@ void indorder(Nodo nodo) {
     print(nodo.valor, " ");     // Imprimimos el valor del nodo actual
     indorder(nodo.nodo_de);    // Llamada recursiva para el nodo derecho
 }
+````
 Este método imprime los valores de los nodos en orden ascendente.
 Recorrido en Preorden (Pre-Order)
-d
+````d
 Copiar código
 void preorder(Nodo nodo) {
     if (nodo is null) return;  // Caso base
@@ -81,20 +86,20 @@ void preorder(Nodo nodo) {
     preorder(nodo.nodo_iz);     // Llamada recursiva para el nodo izquierdo
     preorder(nodo.nodo_de);     // Llamada recursiva para el nodo derecho
 }
+````
 Imprime el valor del nodo actual antes de recorrer los hijos.
 Recorrido en Postorden (Post-Order)
-d
-Copiar código
+````d
 void postorder(Nodo nodo) {
     if (nodo is null) return;  // Caso base
     postorder(nodo.nodo_iz);   // Llamada recursiva para el nodo izquierdo
     postorder(nodo.nodo_de);    // Llamada recursiva para el nodo derecho
     print(nodo.valor, " ");      // Imprimimos el valor del nodo actual
 }
+````
 Imprime el valor del nodo después de recorrer ambos hijos.
 Inserción de Nodos
-d
-Copiar código
+````d
 void insert(Nodo nodo, int valor) {
     if (nodo is null) return;  // Caso base
     if (valor >= nodo.valor) {
@@ -103,10 +108,11 @@ void insert(Nodo nodo, int valor) {
         // Lógica para insertar en el subárbol izquierdo...
     }
 }
+````
 Este método inserta un nuevo nodo en el árbol siguiendo las reglas de un árbol binario de búsqueda.
 Búsqueda de Nodos
-d
-Copiar código
+````d
+
 void encontrarEImprimir(Nodo nodo, int valor) {
     if (nodo is null) {
         writeln("Nodo no encontrado.");  // Mensaje si el nodo no existe
@@ -114,14 +120,14 @@ void encontrarEImprimir(Nodo nodo, int valor) {
     }
     // Comparación y búsqueda recursiva...
 }
+````
 Busca un nodo por su valor e imprime información relevante.
 Conclusión
 Este código proporciona una implementación básica de un árbol binario en D, permitiendo insertar nodos y realizar recorridos en diferentes órdenes. Los árboles binarios son una estructura fundamental en la informática y tienen aplicaciones en diversas áreas como la búsqueda de datos y la representación de jerarquías.
-```
+
 
 ## Conclusión
 Este código implementa un árbol binario de búsqueda en D, permitiendo insertar y recorrer números en orden ascendente. Los árboles de decisión, aunque conceptualmente diferentes, comparten la idea de usar estructuras jerárquicas para organizar información y tomar decisiones basadas en condiciones.
 
-```
 
 
