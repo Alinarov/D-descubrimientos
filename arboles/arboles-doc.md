@@ -59,7 +59,23 @@ Función Principal
 
 void main(string[] args) {
     Nodo root = new Nodo(6);  // Creamos la raíz del árbol con un valor de 6
-    // Creamos nodos adicionales y establecemos las relaciones...
+    // Creamos nodos adicionales con valores específicos
+	Nodo nod1 = new Nodo(4);  // Nodo con valor 4
+	Nodo nod2 = new Nodo(1);  // Nodo con valor 1
+	Nodo nod3 = new Nodo(5);  // Nodo con valor 5
+	Nodo nod4 = new Nodo(8);  // Nodo con valor 8
+	Nodo nod5 = new Nodo(9);  // Nodo con valor 9
+
+	// Establecemos las relaciones entre los nodos para construir el árbol
+	root.nodo_iz = nod1;  // El nodo izquierdo de la raíz apunta a nod1
+	root.nodo_de = nod4;  // El nodo derecho de la raíz apunta a nod4
+
+	// Construimos la subestructura del árbol
+	nod1.nodo_iz = nod2;   // El nodo izquierdo de nod1 apunta a nod2
+	nod1.nodo_de = nod3;   // El nodo derecho de nod1 apunta a nod3
+
+	nod4.nodo_de = nod5;   // El nodo derecho de nod4 apunta a nod5
+
 }
 ````
 
