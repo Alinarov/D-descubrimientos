@@ -56,7 +56,7 @@ Se importa la biblioteca std.stdio para realizar operaciones de entrada/salida.
 La clase Nodo representa un nodo del árbol, que contiene un valor y punteros a sus hijos izquierdo y derecho.
 Función Principal
 ````d
-Copiar código
+
 void main(string[] args) {
     Nodo root = new Nodo(6);  // Creamos la raíz del árbol con un valor de 6
     // Creamos nodos adicionales y establecemos las relaciones...
@@ -68,7 +68,7 @@ Se crea un nodo raíz y se inicializan otros nodos para construir el árbol.
 Recorridos del Árbol
 Recorrido en Orden (In-Order)
 ````d
-Copiar código
+
 void indorder(Nodo nodo) {
     if (nodo is null) return;  // Caso base
     indorder(nodo.nodo_iz);    // Llamada recursiva para el nodo izquierdo
@@ -79,7 +79,7 @@ void indorder(Nodo nodo) {
 Este método imprime los valores de los nodos en orden ascendente.
 Recorrido en Preorden (Pre-Order)
 ````d
-Copiar código
+
 void preorder(Nodo nodo) {
     if (nodo is null) return;  // Caso base
     print(nodo.valor, " ");     // Imprimimos el valor del nodo actual
