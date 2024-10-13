@@ -1,0 +1,1 @@
+- gdc -fPIC -lsqlite3
