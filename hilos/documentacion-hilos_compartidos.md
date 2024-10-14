@@ -68,6 +68,7 @@ void main() {
     
     thread.join();
 }
+```
 Requisitos
 DMD (D Compiler)
 Biblioteca estándar de D
