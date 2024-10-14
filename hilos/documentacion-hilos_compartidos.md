@@ -69,16 +69,14 @@ void main() {
     thread.join();
 }
 ```
-Requisitos
+- Requisitos
 DMD (D Compiler)
 Biblioteca estándar de D
 Compilación y Ejecución
 Para compilar y ejecutar el programa, usa el siguiente comando:
 
-bash
-Copiar código
+```bash
 rdmd nombre_del_archivo.d
+```
 Conclusión
 Este proyecto ilustra el uso básico de hilos en D y cómo manejar instancias de clases de manera segura en un contexto de concurrencia. La implementación utiliza el modificador shared para asegurar que las instancias sean accesibles y seguras entre hilos.
-
-![image](https://github.com/user-attachments/assets/ef78105a-5126-4e07-b4ce-77f2431eecd1)
