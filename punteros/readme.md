@@ -1,4 +1,3 @@
-Aquí tienes la documentación en formato **Markdown**:
 
 ---
 
