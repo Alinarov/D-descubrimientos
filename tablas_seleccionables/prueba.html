@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <style>
+        .selected {
+            background-color: #b8daff !important;
+        }
+        .table tbody tr:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="mt-5">
+        <div class="table-responsive">
+            <table id="informacion_tablas" class="table table-bordered table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th>Editar</th>
+                        <th>Columna 1</th>
+                        <th>Columna 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="btn btn-primary btn-sm">Seleccionar</button></td>
+                        <td><textarea rows="1">Dato 1</textarea></td>
+                        <td><textarea rows="1">Dato 2</textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-primary btn-sm">Seleccionar</button></td>
+                        <td><textarea rows="1">Dato 5</textarea></td>
+                        <td><textarea rows="1">Dato 8</textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Scripts de cdnjs.cloudflare.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            if (typeof jQuery === 'undefined') {
+                console.error('jQuery no está cargado');
+                return;
+            }
+
+            jQuery(function($) {
+                try {
+                    let tabla = $('#informacion_tablas').DataTable({
+                        "language": {
+                            "lengthMenu": "Mostrar _MENU_ registros por página",
+                            "zeroRecords": "No se encontraron resultados",
+                            "info": "Mostrando página _PAGE_ de _PAGES_",
+                            "infoEmpty": "No hay registros disponibles",
+                            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                            "search": "Buscar:",
+                            "paginate": {
+                                "first": "Primero",
+                                "last": "Último",
+                                "next": "Siguiente",
+                                "previous": "Anterior"
+                            }
+                        }
+                    });
+
+                    // Manejar la selección de filas
+                    $('#informacion_tablas tbody').on('click', 'tr', function() {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        } else {
+                            tabla.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                    });
+
+                    // Manejar el click en el botón seleccionar
+                    $('#informacion_tablas tbody').on('click', 'button', function(e) {
+                        e.stopPropagation();
+                        let fila = $(this).closest('tr');
+                        
+                        if (fila.hasClass('selected')) {
+                            fila.removeClass('selected');
+                        } else {
+                            tabla.$('tr.selected').removeClass('selected');
+                            fila.addClass('selected');
+                        }
+
+                        let datos = [];
+                        fila.find('textarea').each(function() {
+                            datos.push($(this).val());
+                        });
+                        console.log("extraendo datos");
+                        console.log('Datos de la fila:', datos[0], datos[1]);
+                    });
+
+                    // Función global para obtener datos
+                    window.obtenerDatos = function() {
+                        let filaSeleccionada = tabla.$('tr.selected');
+                        if (filaSeleccionada.length === 0) {
+                            console.log('No hay fila seleccionada');
+                            return null;
+                        }
+
+                        let datos = [];
+                        filaSeleccionada.find('textarea').each(function() {
+                            datos.push($(this).val());
+                        });
+                        console.log('Datos de la fila seleccionada:', datos);
+                        return datos;
+                    };
+                } catch (error) {
+                    console.error('Error al inicializar DataTable:', error);
+                }
+            });
+        };
+    </script>
+</body>
+</html>
